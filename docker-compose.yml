@@ -1,0 +1,21 @@
+version: '3'
+services:
+  api:
+    image: file-api
+    build: ./file-api
+    networks:
+      - backend
+    ports:
+      - "3000:3000"
+
+  web:
+    image: file-front
+    build: ./file-front
+    networks:
+      - backend
+    ports:
+      - "3001:3000"
+
+networks:
+  backend:
+    driver: bridge
