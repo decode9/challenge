@@ -20,9 +20,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: cd file-api
-      - run: npm test
-      - run: npm run build --if-present
+      - run: cd file-api && npm test
+      - run: cd file-api && npm run build --if-present
 
   build-file-front:
     runs-on: ubuntu-latest
@@ -37,6 +36,5 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: cd file-front
-      - run: npm test
-      - run: npm run build --if-present
+      - run: cd file-front && npm test
+      - run: cd file-front && npm run build --if-present
